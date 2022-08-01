@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class Main {
 //    Задание 1
     public static void checkGapYear(int year) {
@@ -17,7 +19,7 @@ public class Main {
         return name.equals("iOS");
     }
     public static boolean checkDeviceYear(int year) {
-        int currentYear = 2022;
+        int currentYear = LocalDate.now().getYear();
         return year >= currentYear;
     }
 

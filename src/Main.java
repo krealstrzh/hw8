@@ -42,8 +42,8 @@ public class Main {
 //        Задание 2
         String nameOS = "Android";
         boolean clientOS = checkOS(nameOS);
-        int clientDeviceYear = 2023;
-        boolean newDevice = checkDeviceYear(clientDeviceYear);
+        int clientYear = 2023;
+        boolean newDevice = checkDeviceYear(clientYear);
         if (clientOS && newDevice) {
             System.out.println("Установите версию для iOS по ссылке ");
         } else if (clientOS) {

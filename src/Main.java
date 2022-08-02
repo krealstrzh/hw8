@@ -15,12 +15,32 @@ public class Main {
     }
 
     //    Задание 2
-    public static boolean checkOS(String name) {
-        return name.equals("iOS");
+    public static int checkOS(String name) {
+        if (name.equalsIgnoreCase("iOS")) {
+            return 0;
+        } else if (name.equalsIgnoreCase("Android")) {
+            return 1;
+        } else {
+            return 2;
+        }
     }
-    public static boolean checkDeviceYear(int year) {
+    public static boolean checkDeviceYear (int year) {
         int currentYear = LocalDate.now().getYear();
         return year >= currentYear;
+    }
+    public static void printMessageLink (int OS, boolean year) {
+        if (OS == 0 && year) {
+            System.out.println("Установите версию для iOS по ссылке");
+        } else if (OS == 0) {
+            System.out.println("Установите lite-версию для iOS по ссылке");
+        } else if (OS == 1 && year) {
+            System.out.println("Установите версию для Android по ссылке");
+        } else if (OS == 1) {
+            System.out.println("Установите lite-версию для Android по ссылке");
+        } else {
+            System.out.println("Данная ОС не поддерживается :( Проверьте правильность написания названия ОС");
+        }
+
     }
 
     //    Задание 3
@@ -40,19 +60,11 @@ public class Main {
         int yearToCheck = 2020;
         checkGapYear(yearToCheck);
 //        Задание 2
-        String nameOS = "Android";
-        boolean clientOS = checkOS(nameOS);
-        int clientYear = 2023;
-        boolean newDevice = checkDeviceYear(clientYear);
-        if (clientOS && newDevice) {
-            System.out.println("Установите версию для iOS по ссылке ");
-        } else if (clientOS) {
-            System.out.println("Установите lite-версию для iOS по ссылке ");
-        } else if (newDevice) {
-            System.out.println("Установите версию для Android по ссылке ");
-        } else {
-            System.out.println("Установите lite-версию для Android по ссылке ");
-        }
+        String nameOS = "Windows Phone";
+        int clientYear = 2021;
+        int resultOS = checkOS(nameOS);
+        boolean deviceYear = checkDeviceYear(clientYear);
+        printMessageLink(resultOS, deviceYear);
 //        Задание 3
         int deliveryDistance = 12;
         checkDistance(deliveryDistance);

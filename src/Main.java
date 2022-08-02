@@ -21,6 +21,7 @@ public class Main {
         } else if (name.equalsIgnoreCase("Android")) {
             return 1;
         } else {
+            System.out.println("Ошибка в написании ОС :(");
             return 2;
         }
     }
@@ -60,7 +61,7 @@ public class Main {
         int yearToCheck = 2020;
         checkGapYear(yearToCheck);
 //        Задание 2
-        String nameOS = "Windows Phone";
+        String nameOS = "android";
         int clientYear = 2021;
         int resultOS = checkOS(nameOS);
         boolean deviceYear = checkDeviceYear(clientYear);
